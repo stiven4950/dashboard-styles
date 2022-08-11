@@ -21,7 +21,7 @@ class CustomMenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
+    final button = Material(
       color: Colors.transparent,
       child: InkWell(
         onTap: (onPressed != null) ? () => onPressed!() : null,
@@ -57,5 +57,11 @@ class CustomMenuItem extends StatelessWidget {
         ),
       ),
     );
+    return isOpenBar
+        ? button
+        : Tooltip(
+            message: text,
+            child: button,
+          );
   }
 }

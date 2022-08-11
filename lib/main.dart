@@ -35,7 +35,13 @@ class MyApp extends StatelessWidget {
           ),
         ),
         builder: (context, child) {
-          return DashboardLayout(child: child!);
+          return Overlay(
+            initialEntries: [
+              OverlayEntry(
+                builder: (_) => DashboardLayout(child: child!),
+              )
+            ],
+          );
         },
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:dashboard_custom_styles/ui/shared/widgets/button_neumorphism_icon.dart';
 import 'package:dashboard_custom_styles/ui/shared/widgets/button_rounded.dart';
 import 'package:dashboard_custom_styles/ui/shared/widgets/custom_bottom_navigation_bar.dart';
+import 'package:dashboard_custom_styles/ui/shared/widgets/neumorphic_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,7 +13,7 @@ class DashboardView extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Container(
-      padding: const EdgeInsets.only(left: 30, right: 30, top: 30),
+      padding: const EdgeInsets.only(left: 30, right: 30, top: 30, bottom: 30),
       color: Colors.indigo.withOpacity(.2),
       child: SingleChildScrollView(
         child: Column(
@@ -31,7 +32,7 @@ class DashboardView extends StatelessWidget {
               alignment: WrapAlignment.start,
               children: [
                 SizedBox(
-                  width: size.width * .20,
+                  width: 350,
                   child: Column(
                     children: [
                       Row(
@@ -108,122 +109,13 @@ class DashboardView extends StatelessWidget {
                         ],
                       ),
                       const SizedBox(height: 30),
-                      Container(
-                        padding: const EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                            colors: [
-                              Colors.indigo.shade100,
-                              Colors.white,
-                            ],
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.indigo.withOpacity(0.4),
-                              offset: const Offset(4, 4),
-                              blurRadius: 15,
-                              spreadRadius: 1,
-                            ),
-                            const BoxShadow(
-                              color: Colors.white,
-                              offset: Offset(-4, -4),
-                              blurRadius: 15,
-                              spreadRadius: 1,
-                            ),
-                          ],
-                          borderRadius: BorderRadius.circular(7),
-                        ),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: Column(
-                                    children: [
-                                      Text(
-                                        'Ipsum Dolor',
-                                        style: GoogleFonts.roboto(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                      const SizedBox(height: 5),
-                                      const Text('Dolor sit amet lorem'),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 50,
-                                  child: VerticalDivider(),
-                                ),
-                                Expanded(
-                                  child: Column(
-                                    children: [
-                                      const Text('Lorem'),
-                                      const SizedBox(height: 5),
-                                      Text(
-                                        '11',
-                                        style: GoogleFonts.roboto(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 20),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                ClipOval(
-                                  child: Container(
-                                    height: 20,
-                                    width: 20,
-                                    color: Colors.indigo,
-                                  ),
-                                ),
-                                const Text('Dolor'),
-                                ClipOval(
-                                  child: Container(
-                                    height: 20,
-                                    width: 20,
-                                    color: Colors.indigo.shade300,
-                                  ),
-                                ),
-                                const Text('Lorem'),
-                              ],
-                            ),
-                            Container(
-                              margin: const EdgeInsets.symmetric(vertical: 20),
-                              width: size.width,
-                              height: 10,
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: [
-                                    Colors.indigo.shade200,
-                                    Colors.white,
-                                  ],
-                                ),
-                                border: Border.all(color: Colors.indigo),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              child: Row(),
-                            ),
-                          ],
-                        ),
-                      ),
+                      const NeumorphicCard(),
+                      const SizedBox(height: 30),
                     ],
                   ),
                 ),
                 SizedBox(
-                  width: size.width * .20,
+                  width: 350,
                   child: Column(
                     children: [
                       Row(
@@ -289,13 +181,13 @@ class DashboardView extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: size.width * .20,
+                  width: 350,
                   child: Column(
                     children: [],
                   ),
                 ),
                 SizedBox(
-                  width: size.width * .20,
+                  width: 350,
                   child: Column(
                     children: [],
                   ),
